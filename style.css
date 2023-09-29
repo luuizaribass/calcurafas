@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* html {
+    display: inline-block;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://images4.alphacoders.com/430/43056.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background: linear-gradient(90deg, rgba(97,56,6,1) 0%, rgba(221,133,54,1) 25%, rgba(157,94,18,1) 50%, rgba(221,133,54,1) 75%, rgba(97,56,6,1) 100%); */
+}
+
+img {
+    width: 650px;
+    margin-right: 125px;
+    margin-top: -172px;
+}
+
+.calculadora {
+    background-color: #3a3a3acb;
+    border-radius: 20px;
+    box-shadow: 10px 10px 14px 10px rgba(0,0,0,0.77);
+}
+
+#visor {
+    padding: 12px;
+    font-size: 25px;
+    margin: 0 auto; 
+    margin-bottom: 10px;
+    display: block; 
+    border-radius: 10px;
+    color: #ffffff7e;
+}
+
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.numero,
+.operacao {
+    padding: 33px;
+    font-size: 25px;
+    background-color: #1d1b1900;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.numero:hover,
+.operacao:hover {
+    background-color: #112313;
+}
+
+p {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-weight: 100;
+    font-size: 50px;
+    color: #dfffe3;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+}

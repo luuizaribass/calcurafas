@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcurafa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="divisao.png">
+</head>
+<body>
+    <img class="girafa" src="girafa.png" alt="girafa">
+    <div class="calculadora">
+        <p>Calcurafas</p>
+        <input type="text" id="visor" disabled>
+
+        <div class="teclado">
+            <button class="numero" onclick="calculadora.adicionarNumero('7')">7</button>
+            <button class="numero" onclick="calculadora.adicionarNumero('8')">8</button>
+            <button class="numero" onclick="calculadora.adicionarNumero('9')">9</button>
+
+            <button class="operacao" onclick="calculadora.adicionarOperacao('/')">/</button>
+
+            <button class="numero" onclick="calculadora.adicionarNumero('4')">4</button>
+            <button class="numero" onclick="calculadora.adicionarNumero('5')">5</button>
+            <button class="numero" onclick="calculadora.adicionarNumero('6')">6</button>
+
+            <button class="operacao" onclick="calculadora.adicionarOperacao('*')">*</button>
+
+            <button class="numero" onclick="calculadora.adicionarNumero('1')">1</button>
+            <button class="numero" onclick="calculadora.adicionarNumero('2')">2</button>
+            <button class="numero" onclick="calculadora.adicionarNumero('3')">3</button>
+
+            <button class="operacao" onclick="calculadora.adicionarOperacao('-')">-</button>
+
+            <button class="numero" onclick="calculadora.adicionarNumero('0')">0</button>
+
+            <button class="operacao" onclick="calculadora.adicionarOperacao('+')">+</button>
+
+            <button class="operacao" onclick="calculadora.resultado()">=</button>
+            
+            <button class="operacao" onclick="calculadora.limpar()">C</button>
+        </div>
+
+
+    </div>
+    <script>
+
+class Calculadora {
+    constructor() {
+        this.valor = '0'
+    }
+
+    adicionarNumero(numero) {
+        if (this.valor === '0') {
+            this.valor = numero
+        } else {
+            this.valor += numero
+        }
+
+        this.atualizarVisor()
+    }
+
+     
+
+    adicionarOperacao(operacao) {
+        if (
+         this.valor.slice(-1) === '+' ||
+         this.valor.slice(-1) === '-' ||
+         this.valor.slice(-1) === '*' ||
+         this.valor.slice(-1) === '/' 
+        ) {
+         this.valor = this.valor.slice(0, -1) + operacao
+        } else {
+         this.valor += operacao
+        }
+        this.atualizarVisor()
+     }
+
+     limpar() {
+        this.valor = '0'
+        this.atualizarVisor()
+     }
+
+     resultado() {
+        try{
+            this.valor = eval(this.valor).toString()
+        } catch(e) {
+            this.valor = 'Erro'
+        }
+        this.atualizarVisor()
+     }
+
+     atualizarVisor() {
+        document.getElementById('visor').value = this.valor
+     }
+     
+}
+
+let calculadora =  new Calculadora()
+
+    </script>
+</body>
+</html>
